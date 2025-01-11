@@ -8,8 +8,13 @@ type Customer struct {
 }
 
 // 請求項目の構造体
-type Invoice struct {
+type InvoiceItem struct {
 	Description string
 	UnitPrice   float64
 	Quantity    int
+}
+
+// 小計を計算するメソッド
+func (item InvoiceItem) Total() float64 {
+	return item.UnitPrice * float64(item.Quantity) // 単価 * 数量
 }
