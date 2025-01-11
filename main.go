@@ -6,3 +6,10 @@ type Customer struct {
 	Address string
 	Email   string
 }
+
+// 請求項目の構造体
+type Invoice struct {
+	Description string
+	UnitPrice   float64
+	Quantity    int
+}
