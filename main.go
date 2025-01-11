@@ -25,3 +25,12 @@ type Invoice struct {
 	Item        []InvoiceItem
 	IvoiceTotal float64
 }
+
+// 合計金額を計算するメソッド
+func (inv *Invoice) CalculateTotal() {
+	var total float64
+	for _, item := range inv.Item {
+		total += item.Total()
+	}
+	inv.IvoiceTotal = total
+}
