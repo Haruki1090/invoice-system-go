@@ -18,3 +18,10 @@ type InvoiceItem struct {
 func (item InvoiceItem) Total() float64 {
 	return item.UnitPrice * float64(item.Quantity) // 単価 * 数量
 }
+
+// 請求書の構造体
+type Invoice struct {
+	Customer    Customer
+	Item        []InvoiceItem
+	IvoiceTotal float64
+}
